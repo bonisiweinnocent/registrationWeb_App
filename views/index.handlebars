@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- <link rel="stylesheet" href="/public/style.css"> --}}
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <form action="/index" method="POST">
+        <div class="container">
+            <div class="head">
+                <h3>The Registration number App</h3>
+                <div>
+                    {{#if messages.info}}
+                    <div class="emptyform">
+                        <h1> {{messages.info}}</h1>
+                    </div>
+                    {{/if}}
+                </div>
+                <div>
+                    {{#if messages.key}}
+                    <div class="success">
+                        <h1> {{messages.key}}</h1>
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="display  red-text"></div>
+                <div class="showAll green-text"></div>
+                <div class="enter">
+                    Registration No. <textarea name="nameInput" value="nameInput" class="textarea"
+                        placeholder="  Enter registration" value=""></textarea><br><br>
+                    <button class="button-primary addBtn" on type="submit" value="addBtn" name="addBtn">Add</button>
+                </div>
+
+
+
+
+            </div>
+    </form>
+    <form action="/reg_numbers" method="POST">
+        <div class="heading">
+            <h2>Filter by town</h2>
+
+            <div class="radioBtn">
+
+                <label class="radios">
+                    <input type="radio" name="town" class="Radio" value="CA">
+                    <span class="label-body">Cape Town</span>
+                </label>
+                <label class="radios">
+                    <input type="radio" name="town" class="Radio" value="CY">
+                    <span class="label-body">Bellville</span>
+                </label>
+                <label class="radios">
+                    <input type="radio" name="town" class="Radio" value="CK">
+                    <span class="label-body">Caledon</span>
+                </label>
+                <div>
+                    <button class="button-primary showBtn" type="submit" name="filterBtn" value="filterBtn"
+                        name="showButton">Filter</button>
+                </div>
+                <div class="pops">
+                    {{!-- <span class="popup  plateStyle "> --}}
+                        <ul id="pops plateStyle">
+                            {{#each displayRegs}}
+                            <li>{{regnumber}}</li>
+                            {{/each}}
+                        </ul>
+
+                        {{!--
+                    </span> --}}
+                </div>
+    </form>
+    <form action="/filter" method="get">
+        </div>
+        <div class="filter">
+
+        </div>
+        <div class="show">
+            <div>
+                <button class="button-primary showBtn" on type="submit" value="showBtn" name="button">Display
+                    All</button>
+            </div>
+    </form>
+    <form action="/reset" method="get">
+        <div>
+            <button class="button-primary resetBtn" on type="submit" name="Resetbutton" value="Resetbutton"
+                name="Resetbutton">Reset</button>
+        </div>
+    </form>
+    {{!-- <h6>{{reset3}}</h6> --}}
+    </div>
+
+    </div>
+
+
+</body>
+
+</html>
