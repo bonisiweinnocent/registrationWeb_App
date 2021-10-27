@@ -82,7 +82,7 @@ app.post('/index', async function (req, res) {
                 req.flash('info', 'Please enter the registration in a correct format.');
         } else
             await theRegistration.regInput(inputField);
-            req.flash('key','Registration added successfully')
+            // req.flash('key','Registration added successfully')
         res.redirect('/')
 
     } catch (error) {

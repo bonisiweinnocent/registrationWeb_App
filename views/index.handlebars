@@ -5,54 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{!-- <link rel="stylesheet" href="/public/style.css"> --}}
+    <link rel="stylesheet" href="/public/style.css">
     <title>Document</title>
 
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <form action="/index" method="POST">
-        <div class="container">
-            <div class="head">
-                <h3>The Registration number App</h3>
-                <div>
-                    {{#if messages.info}}
-                    <div class="emptyform">
-                        <h1> {{messages.info}}</h1>
-                    </div>
-                    {{/if}}
+    <div class="holder">
+        <form action="/index" method="POST">
+
+
+            <h4><b>Registration number App </b></h4>
+            <div>
+                {{#if messages.info}}
+                <div class="emptyform">
+                    {{messages.info}}
                 </div>
-                <div>
-                    {{#if messages.key}}
-                    <div class="success">
-                        <h1> {{messages.key}}</h1>
-                    </div>
-                    {{/if}}
-                </div>
-                <div class="display  red-text"></div>
-                <div class="showAll green-text"></div>
-                <div class="enter">
-                    Registration No. <textarea name="nameInput" value="nameInput" class="textarea"
-                        placeholder="  Enter registration" value=""></textarea><br><br>
-                    <button class="button-primary addBtn" on type="submit" value="addBtn" name="addBtn">Add</button>
-                </div>
-
-
-
-
+                {{/if}}
             </div>
+            <div>
+                {{#if messages.key}}
+                <div class="success">
+                    <h1> {{messages.key}}</h1>
+                </div>
+                {{/if}}
+            </div>
+            <div class="display  red-text"></div>
+            <div class="showAll green-text"></div>
+            <div class="enter">
+                Registration No. <textarea name="nameInput" value="nameInput" class="textarea"
+                    placeholder="  eg. CA12345" value=""></textarea><br><br>
+                <button class="button-primary addBtn" on type="submit" value="addBtn" name="addBtn">Add</button>
+            </div>
+
+
+
+
+    </div>
     </form>
     <form action="/reg_numbers" method="POST">
         <div class="heading">
-            <h2>Filter by town</h2>
+            <h3>Filter by town</h3>
 
             <div class="radioBtn">
 
@@ -72,17 +73,20 @@
                     <button class="button-primary showBtn" type="submit" name="filterBtn" value="filterBtn"
                         name="showButton">Filter</button>
                 </div>
-                <div class="pops">
-                    {{!-- <span class="popup  plateStyle "> --}}
-                        <ul id="pops plateStyle">
-                            {{#each displayRegs}}
-                            <li>{{regnumber}}</li>
-                            {{/each}}
-                        </ul>
+            </div>
+            <div class="pops">
+                {{!-- <span class="popup  plateStyle "> --}}
+                    <ul id="pops plateStyle">
+                        {{#each displayRegs}}
+                        <li>{{regnumber}}</li>
+                        {{/each}}
+                    </ul>
 
-                        {{!--
-                    </span> --}}
-                </div>
+                    {{!--
+                </span> --}}
+
+            </div>
+            
     </form>
     <form action="/filter" method="get">
         </div>
@@ -105,7 +109,7 @@
     </div>
 
     </div>
-
+    </div>
 
 </body>
 

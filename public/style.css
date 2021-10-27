@@ -1,35 +1,44 @@
-/* *{
+body{
     background: lightslategray;
-} */
+}
 
 .container{
-    padding: 5%;
-    padding-left: 5%;
-    margin: 2%;
+    padding: 5rem;
+    padding-left: 10rem;
+    margin: 2rem;
     border: 14px solid 	#000000;
-    border-radius: 2%;
+    border-radius: 2rem;
     box-shadow: 10px 10px;
     background: 	#d3d3d3;
-    
 }
 .addBtn{
-   margin: 10%;
-   margin-left: 5%;
+   margin: 0.5rem;
+   margin-left: 15.8rem;
+   font-size: 20px;
+   border-radius: 12px;
+
+}
+.resetBtn{
+    margin: 0.5rem;
+    margin-left: 15.8rem;
+    font-size: 20px;
+    border-radius: 12px; 
+}
+.showBtn{
+    margin: 0.5rem;
+    margin-left: 15.8rem;
+    font-size: 20px;
+    border-radius: 12px;
 }
 .heading{
-   margin: 10%;
+   margin: 2rem;
 }
-.show{
-    display: flex;
-    column-gap: 5%;
-   padding-left: 10%;
-   padding-top: 15%;
-}
+
 .red-text{
     color: red;
+    font-size: 4px;
 }
 .green-text{
-  
     color: green;
 }
 
@@ -37,28 +46,38 @@ li{
     border-style: solid;
     border-color: black;
     background: yellow;
-    border-radius: 9px 9px 9px 9px;
-    display: inline-flex;
-    padding-bottom: 10px;
-    /* display: flex; 
-     flex-wrap: wrap; 
-     justify-content: space-around;  */
- }
-
-.pops li{
-padding: 2%;
-margin-bottom: 4%;
-
+    border-radius: 7px 7px 7px 7px;
+    display: inline;
+    padding: 10px;
+    
+    /* margin-top: 55px; */
+}
+ul{
+    padding-top: 20px;
+    padding-left: 17%;
+}
+.popup{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between ;
+    flex-direction: row;
+   
 }
 .emptyform{
-    font-size: 8px;
+    font-size: 19px;
     color: crimson;
 }
-.success{
-    color: green;
-    font-size: 8px;
-} */
-.form {
-    display: block;
-    /* margin-top: 0em; */
+.radioBtn{
+    display: flex;
+    justify-content: center;
+}
+.h3, h3{
+    padding-left: 32%;
+    
+}
+.pops{
+    padding-left: 17%;
+}
+.holder{
+    padding-left: 30%;
 }
