@@ -23,12 +23,11 @@ describe('The registration web app', function () {
     var regApp = regs(pool);
 
 
-    it('should be able to store registration numbers entered', async function () {
+    it('should be able to store  and display registration numbers entered', async function () {
         var word = "CA 55890"
 
       await regApp.regInput(word)
-        // theGreet.greetings(contain, word)
-console.log(await regApp.displayRegistrations() + "ddssdsdsds") 
+
         assert.deepEqual( [ { regnumber: 'CA 55890' } ], await regApp.displayRegistrations());
 
     });
