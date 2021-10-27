@@ -1,1 +1,1 @@
-[![Build Status](https://app.travis-ci.com/bonisiweinnocent/greetingWebApp.svg?branch=main)](https://app.travis-ci.com/bonisiweinnocent/greetingWebApp)
+[![Build Status](https://app.travis-ci.com/bonisiweinnocent/registrationWeb_App.svg?branch=main)](https://app.travis-ci.com/bonisiweinnocent/registrationWeb_App)
