@@ -60,7 +60,7 @@ app.get('/', async function (req, res) {
 
     res.render('index', {
         displayRegs: await theRegistration.displayRegistrations()
-      
+
 
     })
 
@@ -73,17 +73,19 @@ app.get('/', async function (req, res) {
 app.post('/index', async function (req, res) {
     try {
         let inputField = req.body.nameInput;
-       
+        console.log(req.body.nameInput);
 
         if (inputField === "") {
             req.flash('info', 'Please enter a registration number.');
+        }
+        else if (!inputPatOne.test(inputField)) {
+            req.flash('info', 'Please enter the registration in a correct format.');
+        } else if (inputField !== "") {
+
+                await theRegistration.regInput(inputField);
+                req.flash('key', 'Registration added successfully')
             }
-           else  if (!inputPatOne.test(inputField)) {
-                req.flash('info', 'Please enter the registration in a correct format.');
-        } else
-            await theRegistration.regInput(inputField);
-            // req.flash('key','Registration added successfully')
-        res.redirect('/')
+            res.redirect('/')
 
     } catch (error) {
         console.log(error);
@@ -95,11 +97,11 @@ app.post('/index', async function (req, res) {
 
 app.post('/reg_numbers', async function (req, res) {
     let radio = req.body.town
-    // let filterBtn = req.body.filetrBtn
+   
     try {
 
         let showRegs = await theRegistration.filterRegs(radio)
-        //   console.log( await theRegistration.filterRegs(radio))
+       
         console.log(showRegs);
         res.render('index', { displayRegs: showRegs })
     } catch (error) {
@@ -114,10 +116,10 @@ app.post('/reg_numbers', async function (req, res) {
 });
 
 
-app.get('/filter', async function(req, res){
-let show = await theRegistration.showAllRegs()
+app.get('/filter', async function (req, res) {
+    let show = await theRegistration.showAllRegs()
 
-    res.render('index',{  displayRegs: show})
+    res.render('index', { displayRegs: show })
 })
 
 

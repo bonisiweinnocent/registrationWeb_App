@@ -15,8 +15,9 @@ module.exports = function registration(pool) {
       
 
             let ForeignKey = await getForeignKey(start)
+            console.log( await getForeignKey(start));
 
-            let duplicates = await pool.query('SELECT regnumber FROM registrations WHERE regnumber =$1', [regist]);
+            let duplicates = await pool.query('SELECT regnumber FROM registrations WHERE regnumber =$1', [starterString]);
             if (duplicates.rowCount === 0) {
 
                 await pool.query('INSERT INTO registrations(foreign_id,regnumber) VALUES ($1,$2)', [ForeignKey, starterString]);
@@ -27,8 +28,8 @@ module.exports = function registration(pool) {
         } catch (error) {
             console.log(`regInput function :==> ${error}`);
         }
+ 
     }
-
     async function getForeignKey(regStart) {
      let start = regStart.substring(0, 2);
         let value = await pool.query('SELECT id FROM towns WHERE regstring = $1', [start]);
